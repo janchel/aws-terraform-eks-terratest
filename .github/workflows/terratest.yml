@@ -23,6 +23,11 @@ jobs:
       with:
         go-version: '1.18'
 
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: latest
+
     - name: Debug - Check if secrets are available
       run: |
         if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ]; then
